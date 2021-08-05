@@ -3,7 +3,8 @@ import path from 'path'
 import matter from 'gray-matter'
 import Layout from '../components/Layout'
 
-export default function HomePage() {
+export default function HomePage({posts}) {
+  console.log(posts)
   return (
     <Layout >
       <h1>Hello world</h1>
@@ -26,8 +27,8 @@ export async function getStaticProps() {
        frontmatter
      }
    })
-  console.log(posts)
+ 
   return {
-    props: {}
+    props: {posts}
   }
 }
