@@ -22,9 +22,18 @@ export default function PostPage({frontmatter: {title, category, date, cover_ima
           <img src={cover_image} alt={title} className="w-full rounded" />
 
           <div className="flex justify-between items-center bg-gray-100 p-2 my-8">
-            <div>
+            <div className="flex items-center">
               <img src={author_image} alt="" className="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block" />
+              <h4>{author}</h4>
             </div>
+            <div className="mr-4">
+            {date}
+          </div>
+          </div>
+          
+
+          <div className="blog-text mt-2">
+            <div dangerouslySetInnerHTML={{__html: marked(content)}}></div>
           </div>
         </div>
     </Layout>
